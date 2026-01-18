@@ -1,0 +1,14 @@
+# Core Application Dependencies
+tkcalendar
+anthropic
+python-dotenv
+requests
+
+# Icon Generation
+pillow
+
+# Building Desktop Application
+pyinstaller
+
+# Additional Dependencies (auto-installed with above, but listed for clarity)
+babel
