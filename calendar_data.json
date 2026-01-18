@@ -1,0 +1,314 @@
+[
+  {
+    "date": "1/19/26",
+    "event": "Flow Diagram (team) Due"
+  },
+  {
+    "date": "1/26/26",
+    "event": "Problem Set 1 (individual) Due"
+  },
+  {
+    "date": "1/26/26",
+    "event": "Case Report 1: Benihana (team) Due"
+  },
+  {
+    "date": "2/2/26",
+    "event": "Quiz 1 (individual) Due"
+  },
+  {
+    "date": "2/2/26",
+    "event": "Quiz 1: Manzana (individual) Due"
+  },
+  {
+    "date": "2/2/26",
+    "event": "Problem Set 2 (individual) Due"
+  },
+  {
+    "date": "2/9/26",
+    "event": "Case Quiz 2: Playa Dorado (individual) Due"
+  },
+  {
+    "date": "2/9/26",
+    "event": "Problem Set 3 (individual) Due"
+  },
+  {
+    "date": "2/9/26",
+    "event": "Quiz 2 (individual) Due"
+  },
+  {
+    "date": "2/16/26",
+    "event": "Problem Set 4 (individual) Due"
+  },
+  {
+    "date": "2/16/26",
+    "event": "Case Report 2: Sport Obermeyer (team) Due"
+  },
+  {
+    "date": "2/23/26",
+    "event": "Case Quiz 3: TPS and Toyota Case Quiz (individual) Due"
+  },
+  {
+    "date": "2/24/26",
+    "event": "Project Presentation & Report (team) Due"
+  },
+  {
+    "date": "3/2/26",
+    "event": "Final Quiz (individual) Due"
+  },
+  {
+    "date": "3/2/26",
+    "event": "Project Peer Feedback (individual) Due"
+  },
+  {
+    "date": "1/13/26",
+    "event": "Sync Session: Course Introduction"
+  },
+  {
+    "date": "1/15/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "1/20/26",
+    "event": "Sync Session: Course Project & Benihana Simulation Introduction"
+  },
+  {
+    "date": "1/22/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "1/27/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "1/29/26",
+    "event": "Sync Session: Manzana Insurance Case"
+  },
+  {
+    "date": "2/3/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "2/5/26",
+    "event": "Sync Session: Playa Dorado Case"
+  },
+  {
+    "date": "2/10/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "2/12/26",
+    "event": "Sync Session: Sport Obermeyer Case"
+  },
+  {
+    "date": "2/17/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "2/19/26",
+    "event": "Sync Session: Toyota & Hank Kolb"
+  },
+  {
+    "date": "2/24/26",
+    "event": "Sync Session: Bullwhip Effect"
+  },
+  {
+    "date": "2/26/26",
+    "event": "Virtual Office Hour"
+  },
+  {
+    "date": "2/3/26",
+    "event": "Training Run - Easy 3 miles (Week 1, Day 1)"
+  },
+  {
+    "date": "2/5/26",
+    "event": "Training Run - Easy 2 miles + strength training (Week 1, Day 2)"
+  },
+  {
+    "date": "2/7/26",
+    "event": "Training Run - Easy 3 miles (Week 1, Day 3)"
+  },
+  {
+    "date": "2/8/26",
+    "event": "Training Run - Long run 4 miles at easy pace (Week 1, Day 4)"
+  },
+  {
+    "date": "2/10/26",
+    "event": "Training Run - Easy 3 miles (Week 2, Day 1)"
+  },
+  {
+    "date": "2/12/26",
+    "event": "Training Run - Easy 2.5 miles + strength training (Week 2, Day 2)"
+  },
+  {
+    "date": "2/14/26",
+    "event": "Training Run - Easy 3.5 miles (Week 2, Day 3)"
+  },
+  {
+    "date": "2/15/26",
+    "event": "Training Run - Long run 5 miles at easy pace (Week 2, Day 4)"
+  },
+  {
+    "date": "2/17/26",
+    "event": "Training Run - Easy 3.5 miles (Week 3, Day 1)"
+  },
+  {
+    "date": "2/19/26",
+    "event": "Training Run - Tempo run 3 miles (1 mile warm-up, 1 mile tempo, 1 mile cool-down) + strength training (Week 3, Day 2)"
+  },
+  {
+    "date": "2/21/26",
+    "event": "Training Run - Easy 4 miles (Week 3, Day 3)"
+  },
+  {
+    "date": "2/22/26",
+    "event": "Training Run - Long run 6 miles at easy pace (Week 3, Day 4)"
+  },
+  {
+    "date": "2/24/26",
+    "event": "Training Run - Easy 4 miles (Week 4, Day 1)"
+  },
+  {
+    "date": "2/26/26",
+    "event": "Training Run - Tempo run 4 miles (1 mile warm-up, 2 miles tempo, 1 mile cool-down) + strength training (Week 4, Day 2)"
+  },
+  {
+    "date": "2/28/26",
+    "event": "Training Run - Easy 4 miles (Week 4, Day 3)"
+  },
+  {
+    "date": "3/1/26",
+    "event": "Training Run - Long run 7 miles at easy pace (Week 4, Day 4)"
+  },
+  {
+    "date": "3/3/26",
+    "event": "Training Run - Easy 4.5 miles (Week 5, Day 1)"
+  },
+  {
+    "date": "3/5/26",
+    "event": "Training Run - Interval training 4 miles (1 mile warm-up, 4x400m intervals with recovery, 1 mile cool-down) + strength training (Week 5, Day 2)"
+  },
+  {
+    "date": "3/7/26",
+    "event": "Training Run - Easy 4.5 miles (Week 5, Day 3)"
+  },
+  {
+    "date": "3/8/26",
+    "event": "Training Run - Long run 8 miles at easy pace (Week 5, Day 4)"
+  },
+  {
+    "date": "3/10/26",
+    "event": "Training Run - Easy 5 miles (Week 6, Day 1)"
+  },
+  {
+    "date": "3/12/26",
+    "event": "Training Run - Tempo run 5 miles (1 mile warm-up, 3 miles tempo, 1 mile cool-down) + strength training (Week 6, Day 2)"
+  },
+  {
+    "date": "3/14/26",
+    "event": "Training Run - Easy 5 miles (Week 6, Day 3)"
+  },
+  {
+    "date": "3/15/26",
+    "event": "Training Run - Long run 9 miles at easy pace (Week 6, Day 4)"
+  },
+  {
+    "date": "3/17/26",
+    "event": "Training Run - Easy 5 miles (Week 7, Day 1)"
+  },
+  {
+    "date": "3/19/26",
+    "event": "Training Run - Interval training 5 miles (1 mile warm-up, 6x400m intervals with recovery, 1 mile cool-down) + strength training (Week 7, Day 2)"
+  },
+  {
+    "date": "3/21/26",
+    "event": "Training Run - Easy 5.5 miles (Week 7, Day 3)"
+  },
+  {
+    "date": "3/22/26",
+    "event": "Training Run - Long run 10 miles at easy pace (Week 7, Day 4)"
+  },
+  {
+    "date": "3/24/26",
+    "event": "Training Run - Easy 5.5 miles (Week 8, Day 1)"
+  },
+  {
+    "date": "3/26/26",
+    "event": "Training Run - Tempo run 6 miles (1 mile warm-up, 4 miles tempo, 1 mile cool-down) + strength training (Week 8, Day 2)"
+  },
+  {
+    "date": "3/28/26",
+    "event": "Training Run - Easy 6 miles (Week 8, Day 3)"
+  },
+  {
+    "date": "3/29/26",
+    "event": "Training Run - Long run 11 miles at easy pace (Week 8, Day 4)"
+  },
+  {
+    "date": "3/31/26",
+    "event": "Training Run - Easy 6 miles (Week 9, Day 1)"
+  },
+  {
+    "date": "4/2/26",
+    "event": "Training Run - Interval training 5 miles (1 mile warm-up, 8x400m intervals with recovery, 1 mile cool-down) + strength training (Week 9, Day 2)"
+  },
+  {
+    "date": "4/4/26",
+    "event": "Training Run - Easy 6 miles (Week 9, Day 3)"
+  },
+  {
+    "date": "4/5/26",
+    "event": "Training Run - Long run 12 miles at easy pace (Week 9, Day 4)"
+  },
+  {
+    "date": "4/7/26",
+    "event": "Training Run - Easy 6 miles (Week 10, Day 1)"
+  },
+  {
+    "date": "4/9/26",
+    "event": "Training Run - Tempo run 6 miles (1 mile warm-up, 4 miles tempo, 1 mile cool-down) + strength training (Week 10, Day 2)"
+  },
+  {
+    "date": "4/11/26",
+    "event": "Training Run - Easy 6 miles (Week 10, Day 3)"
+  },
+  {
+    "date": "4/12/26",
+    "event": "Training Run - Peak long run 13 miles at easy pace (Week 10, Day 4)"
+  },
+  {
+    "date": "4/14/26",
+    "event": "Training Run - Easy 5 miles (Week 11 - Taper, Day 1)"
+  },
+  {
+    "date": "4/16/26",
+    "event": "Training Run - Easy 4 miles with 4x100m strides + light strength training (Week 11 - Taper, Day 2)"
+  },
+  {
+    "date": "4/18/26",
+    "event": "Training Run - Easy 4 miles (Week 11 - Taper, Day 3)"
+  },
+  {
+    "date": "4/19/26",
+    "event": "Training Run - Easy 8 miles at comfortable pace (Week 11 - Taper, Day 4)"
+  },
+  {
+    "date": "4/21/26",
+    "event": "Training Run - Easy 4 miles (Week 12 - Race Week, Day 1)"
+  },
+  {
+    "date": "4/23/26",
+    "event": "Training Run - Easy 3 miles with 4x100m strides (Week 12 - Race Week, Day 2)"
+  },
+  {
+    "date": "4/25/26",
+    "event": "Training Run - Easy 3 miles (Week 12 - Race Week, Day 3)"
+  },
+  {
+    "date": "4/30/26",
+    "event": "Training Run - Easy 2 miles shakeout run (Week 12 - Race Week, Day 4)"
+  },
+  {
+    "date": "5/2/26",
+    "event": "RACE DAY - Mini Marathon/Half Marathon 13.1 miles - Good luck!"
+  }
+]

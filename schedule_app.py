@@ -14,8 +14,12 @@ class ScheduleApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Course Schedule Calendar")
+        self.data_file = "calendar_data.json"
         self.schedule = self.load_course_schedule()
         self.create_widgets()
+        
+        # Save on exit
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def create_widgets(self):
         cal_frame = tk.Frame(self.root)
@@ -52,6 +56,7 @@ class ScheduleApp:
         if item:
             self.schedule.append({"date": date, "event": item})
             self.refresh_event_listbox()
+            self.save_schedule()
 
     def edit_item(self):
         selected = self.event_listbox.curselection()
@@ -64,6 +69,7 @@ class ScheduleApp:
         if new_event:
             event["event"] = new_event
             self.refresh_event_listbox()
+            self.save_schedule()
 
     def delete_item(self):
         selected = self.event_listbox.curselection()
@@ -74,6 +80,7 @@ class ScheduleApp:
         event = self.filtered_events()[idx]
         self.schedule.remove(event)
         self.refresh_event_listbox()
+        self.save_schedule()
 
     def open_ai_chat(self):
         # Create AI chat window
@@ -163,6 +170,7 @@ If the user is just chatting or asking questions, respond normally without JSON.
                                 "event": event_data["event"]
                             })
                             self.refresh_event_listbox()
+                            self.save_schedule()
                             add_message("Assistant", f"✓ Event added: {event_data['event']} on {event_data['date']}")
                         else:
                             add_message("Assistant", assistant_message)
@@ -199,7 +207,15 @@ If the user is just chatting or asking questions, respond normally without JSON.
         return [e for e in self.schedule if e["date"] == selected_date]
 
     def load_course_schedule(self):
-        # Preload your course schedule
+        # Try to load saved data first
+        if os.path.exists(self.data_file):
+            try:
+                with open(self.data_file, 'r') as f:
+                    return json.load(f)
+            except:
+                pass
+        
+        # If no saved data, return default course schedule
         return [
             {"date": "1/19/26", "event": "Flow Diagram (team) Due"},
             {"date": "1/26/26", "event": "Problem Set 1 (individual) Due"},
@@ -231,6 +247,19 @@ If the user is just chatting or asking questions, respond normally without JSON.
             {"date": "2/24/26", "event": "Sync Session: Bullwhip Effect"},
             {"date": "2/26/26", "event": "Virtual Office Hour"},
         ]
+    
+    def save_schedule(self):
+        """Save schedule to JSON file"""
+        try:
+            with open(self.data_file, 'w') as f:
+                json.dump(self.schedule, f, indent=2)
+        except Exception as e:
+            messagebox.showerror("Save Error", f"Could not save data: {str(e)}")
+    
+    def on_closing(self):
+        """Handle window close event"""
+        self.save_schedule()
+        self.root.destroy()
 
 if __name__ == "__main__":
     root = tk.Tk()
