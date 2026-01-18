@@ -1,6 +1,14 @@
 import tkinter as tk
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox, simpledialog, scrolledtext
 from tkcalendar import Calendar
+import anthropic
+import json
+from datetime import datetime
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 class ScheduleApp:
     def __init__(self, root):
@@ -68,7 +76,115 @@ class ScheduleApp:
         self.refresh_event_listbox()
 
     def open_ai_chat(self):
-        messagebox.showinfo("AI Chatbot", "AI Chatbot integration coming soon!")
+        # Create AI chat window
+        chat_window = tk.Toplevel(self.root)
+        chat_window.title("AI Calendar Assistant")
+        chat_window.geometry("500x600")
+        
+        # Chat display area
+        chat_display = scrolledtext.ScrolledText(chat_window, wrap=tk.WORD, width=60, height=25)
+        chat_display.pack(padx=10, pady=10)
+        chat_display.config(state=tk.DISABLED)
+        
+        # Input frame
+        input_frame = tk.Frame(chat_window)
+        input_frame.pack(fill=tk.X, padx=10, pady=5)
+        
+        chat_input = tk.Entry(input_frame, width=45)
+        chat_input.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+        
+        # Conversation history
+        conversation_history = []
+        
+        def add_message(sender, message):
+            chat_display.config(state=tk.NORMAL)
+            chat_display.insert(tk.END, f"{sender}: {message}\n\n")
+            chat_display.see(tk.END)
+            chat_display.config(state=tk.DISABLED)
+        
+        def send_message():
+            user_message = chat_input.get().strip()
+            if not user_message:
+                return
+            
+            chat_input.delete(0, tk.END)
+            add_message("You", user_message)
+            
+            # Add to conversation history
+            conversation_history.append({
+                "role": "user",
+                "content": user_message
+            })
+            
+            try:
+                # Call Anthropic API
+                client = anthropic.Anthropic()
+                
+                response = client.messages.create(
+                    model="claude-sonnet-4-20250514",
+                    max_tokens=1000,
+                    system="""You are a helpful calendar assistant. Help users add events to their calendar.
+
+When the user wants to add an event, extract the details and respond with JSON in this EXACT format:
+{
+    "action": "add_event",
+    "date": "M/D/YY",
+    "event": "event description"
+}
+
+Date format must be M/D/YY (e.g., "1/15/26" for January 15, 2026).
+If information is missing, ask for it in a friendly way.
+If the user is just chatting or asking questions, respond normally without JSON.""",
+                    messages=conversation_history
+                )
+                
+                assistant_message = response.content[0].text
+                
+                # Add to conversation history
+                conversation_history.append({
+                    "role": "assistant",
+                    "content": assistant_message
+                })
+                
+                # Try to parse JSON and add event
+                try:
+                    # Check if response contains JSON
+                    if "{" in assistant_message and "}" in assistant_message:
+                        # Extract JSON from response
+                        start = assistant_message.find("{")
+                        end = assistant_message.rfind("}") + 1
+                        json_str = assistant_message[start:end]
+                        event_data = json.loads(json_str)
+                        
+                        if event_data.get("action") == "add_event":
+                            # Add event to schedule
+                            self.schedule.append({
+                                "date": event_data["date"],
+                                "event": event_data["event"]
+                            })
+                            self.refresh_event_listbox()
+                            add_message("Assistant", f"✓ Event added: {event_data['event']} on {event_data['date']}")
+                        else:
+                            add_message("Assistant", assistant_message)
+                    else:
+                        # Normal conversation response
+                        add_message("Assistant", assistant_message)
+                        
+                except json.JSONDecodeError:
+                    # Not JSON, just a regular response
+                    add_message("Assistant", assistant_message)
+                    
+            except Exception as e:
+                add_message("Assistant", f"Error: {str(e)}\n\nMake sure you have set your ANTHROPIC_API_KEY environment variable.")
+        
+        send_btn = tk.Button(input_frame, text="Send", command=send_message)
+        send_btn.pack(side=tk.LEFT)
+        
+        # Bind Enter key
+        chat_input.bind("<Return>", lambda e: send_message())
+        
+        # Welcome message
+        add_message("Assistant", "Hi! I'm your calendar assistant. You can ask me to add events like 'Add a dentist appointment on January 20th' or 'Schedule study session for next Tuesday at 3pm'.")
 
     def refresh_event_listbox(self):
         self.event_listbox.delete(0, tk.END)
@@ -100,7 +216,6 @@ class ScheduleApp:
             {"date": "2/24/26", "event": "Project Presentation & Report (team) Due"},
             {"date": "3/2/26", "event": "Final Quiz (individual) Due"},
             {"date": "3/2/26", "event": "Project Peer Feedback (individual) Due"},
-            # Synchronous Sessions and Virtual Office Hours
             {"date": "1/13/26", "event": "Sync Session: Course Introduction"},
             {"date": "1/15/26", "event": "Virtual Office Hour"},
             {"date": "1/20/26", "event": "Sync Session: Course Project & Benihana Simulation Introduction"},
